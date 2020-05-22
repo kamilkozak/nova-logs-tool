@@ -1,7 +1,7 @@
 <template>
     <div>
 
-        <heading class="mb-3"> Logs</heading>
+        <heading class="mb-3"> Logi</heading>
         <div class="flex justify-between">
 
             <div class="relative h-9 flex items-center mb-6">
@@ -22,14 +22,14 @@
                 <button
                         v-if="permissions.canDownload"
                         @click.prevent="download"
-                        title="Download"
+                        title="Pobierz"
                         class="cursor-pointer text-70 hover:text-primary mr-3"
                 >
                     <icon type="download" view-box="0 0 24 24" width="24" height="24"/>
                 </button>
                 <button
                         v-if="permissions.canDelete"
-                        title="Delete"
+                        title="Usuń"
                         class="cursor-pointer text-70 hover:text-primary mr-3"
                         @click.prevent="openDeleteModal"
                 >
@@ -64,17 +64,17 @@
                             <tr>
                                 <th class="text-left" style="width: 100px">
                                     <span class="cursor-pointer inline-flex items-center">
-                                    Level
+                                    Typ
                                     </span>
                                 </th>
                                 <th class="text-left" style="width: 140px">
                                     <span class="cursor-pointer inline-flex items-center">
-                                     Created at
+                                     Utworzono
                                     </span>
                                 </th>
                                 <th class="text-left">
                                     <span class="cursor-pointer inline-flex items-center">
-                                     Message
+                                     Wiadomość
                                     </span>
                                 </th>
                                 <th></th>
@@ -121,7 +121,7 @@
                             <icon type="search" class="mb-3" width="50" height="50" style="color: #A8B9C5"></icon>
 
                             <h3 class="text-base text-80 font-normal mb-6">
-                                No Logs.
+                                Log Pusty.
                             </h3>
                         </div>
                     </div>
@@ -185,7 +185,7 @@
                         <pre class="w-full text-left"><code class="language-bash"
                                                             style="white-space: pre-wrap"
                                                             ref="outputCodeMessage"
-                                                            v-text="'[message]\n' + showLog.text"></code></pre>
+                                                            v-text="'[wiadomość]\n' + showLog.text"></code></pre>
                         <pre class="w-full text-left"><code class="language-bash"
                                                             style="white-space: pre-wrap"
                                                             ref="outputCodeStack"
@@ -217,10 +217,10 @@
                 >
                     <div class="p-8">
                         <heading :level="2" class="mb-6">
-                            Delete Log file
+                            Usuń Logi
                         </heading>
                         <p class="text-80 leading-normal">
-                            Are you sure you want to delete this '{{this.file}}' file?
+                            Napewno usunąć '{{this.file}}' ?
                         </p>
                     </div>
                 </delete-resource-modal>
